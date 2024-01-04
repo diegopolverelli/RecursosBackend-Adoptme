@@ -13,7 +13,12 @@ console.log("PUERTO CONFIGURADO:",process.env.PORT)
 console.log("VARIABLE MONGO_URL:", process.env.MONGO_URL)
 const PORT = process.env.PORT||8080;
 // console.log(process.env.PRUEBA_PORT)
-const connection = mongoose.connect(process.env.MONGO_URL)
+try {
+    const connection = await mongoose.connect(process.env.MONGO_URL)
+    console.log("DB Online")
+} catch (error) {
+    console.log(error.message)
+}
 
 app.use(express.json());
 app.use(cookieParser());
