@@ -9,6 +9,8 @@ import adoptionsRouter from './routes/adoption.router.js';
 import sessionsRouter from './routes/sessions.router.js';
 
 const app = express();
+console.log(process.env.PORT)
+console.log(process.env.MONGO_URL)
 const PORT = process.env.PORT||8080;
 // console.log(process.env.PRUEBA_PORT)
 const connection = mongoose.connect(process.env.MONGO_URL)
