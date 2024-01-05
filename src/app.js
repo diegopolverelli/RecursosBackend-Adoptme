@@ -41,4 +41,8 @@ app.get('/',(req,res)=>{
     res.render('index')
 })
 
+app.get('/prueba',(req,res)=>{
+    res.render('prueba')
+})
+
 app.listen(PORT,()=>console.log(`Listening on ${PORT}`))
